@@ -1,7 +1,7 @@
 # Componente de banner hero interactivo con carousel automático.
 - Instalación
 `npm i`
-- Desarrollo
+- Ejecución
 `npm run dev`
 
 Desarrollado con Vue 3 + Tailwind CSS
