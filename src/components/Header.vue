@@ -1,13 +1,15 @@
 <template>
   <header
-    class="w-full h-[72px]
+    class="w-full relative
            flex items-center justify-between
            bg-[#1A1E89]
            px-4 tablet:px-6 desktop:px-8 py-3">
     <div class="flex items-center gap-4">
-      <span class="text-white text-lg font-bold">
-        Pago <span class="text-xs font-normal">de Banco de Chile</span>
-      </span>
+      <img 
+        src="../assets/img/logo.png" 
+        alt="Pago Banco de Chile" 
+        class="h-[21px] w-[163px]"
+      />
     </div>
 
     <nav
@@ -22,7 +24,8 @@
 
     <button
       class="px-3 tablet:px-4 desktop:px-5 py-2
-             bg-[#00DBBC]
+             bg-[#00DBBC] mt-[8px] mb-[8px] 
+             -mr-[50px] tablet:-mr-[10px] desktop:mr-[40px]
              text-[#181B4B] text-xs tablet:text-sm font-bold
              rounded-full whitespace-nowrap">
       <span class="hidden desktop:inline">QUIERO CONTRATAR</span>
@@ -30,12 +33,27 @@
     </button>
 
     <button
-      class="ml-3
-             text-white text-2xl
-             tablet:hidden"
+      class="ml-3 tablet:hidden"
       @click="menuOpen = !menuOpen">
-      <span v-if="!menuOpen">&#9776;</span>
-      <span v-else>&times;</span>
+      <img 
+        v-if="!menuOpen"
+        src="../assets/img/menu.png" 
+        alt="Menú"
+        class="w-6 h-6"
+      />
+      <svg 
+        v-else
+        class="w-6 h-6 text-white" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24">
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
     </button>
 
     <transition name="fade">
@@ -49,9 +67,9 @@
                text-white text-base font-semibold
                shadow-xl
                tablet:hidden">
-        <a href="#">PRODUCTOS Y TARIFAS</a>
-        <a href="#">CÓMO CONTRATAR</a>
-        <a href="#">BENEFICIOS</a>
+        <a href="#" @click="menuOpen = false">PRODUCTOS Y TARIFAS</a>
+        <a href="#" @click="menuOpen = false">CÓMO CONTRATAR</a>
+        <a href="#" @click="menuOpen = false">BENEFICIOS</a>
       </nav>
     </transition>
   </header>
