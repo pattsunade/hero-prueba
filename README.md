@@ -1,4 +1,4 @@
-#Componente de banner hero interactivo con carousel automático.
+# Componente de banner hero interactivo con carousel automático.
  Instalación
 `npm i`
  Desarrollo
