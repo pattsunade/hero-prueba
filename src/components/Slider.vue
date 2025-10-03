@@ -1,19 +1,36 @@
 <template>
   <section
-    class="relative w-full h-auto lg:h-[700px] bg-gradient-to-br from-[#3939D0] via-[#3E3CF0] to-[#9337E3] rounded-b-3xl shadow-xl overflow-hidden">
-    <div
-      class="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
+    class="relative w-full overflow-hidden
+           h-auto lg:h-[700px]
+           bg-gradient-to-br from-[#3939D0] via-[#3E3CF0] to-[#9337E3]
+           rounded-b-3xl shadow-xl">
+    <div class="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
       <div
-        class="absolute top-0 right-[-100px] w-[600px] h-[120%] bg-gradient-to-br from-pink-400/60 to-pink-500/70 transform origin-top -rotate-[35deg]">
+        class="absolute top-0 right-[-100px]
+               w-[600px] h-[120%]
+               bg-gradient-to-br from-pink-400/60 to-pink-500/70
+               transform origin-top -rotate-[35deg]">
       </div>
 
-      <div class="absolute bottom-0 right-[-50px] w-[500px] h-[60%] bg-gradient-to-tr from-[#2020A0]/80 to-[#3030C0]/60 transform origin-bottom rotate-[25deg]">
+      <div
+        class="absolute bottom-0 right-[-50px]
+               w-[500px] h-[60%]
+               bg-gradient-to-tr from-[#2020A0]/80 to-[#3030C0]/60
+               transform origin-bottom rotate-[25deg]">
       </div>
     </div>
 
-    <div class="flex flex-col lg:flex-row items-center justify-center px-4 pt-0 relative z-10">
+    <div class="relative z-10
+                flex flex-col lg:flex-row
+                items-center justify-center
+                px-4 pt-0">
       <div
-        class="relative w-full lg:w-1/2 flex justify-center lg:justify-start items-end min-h-[380px] lg:min-h-[700px] order-1 lg:order-2 lg:pl-0 pt-8 lg:pt-0">
+        class="relative
+               w-full lg:w-1/2
+               min-h-[380px] lg:min-h-[700px]
+               flex justify-center lg:justify-start items-end
+               order-1 lg:order-2
+               pt-8 lg:pt-0 lg:pl-0">
         <transition name="image-fade" mode="out-in">
           <div
             :key="currentSlide"
@@ -22,23 +39,40 @@
               :src="slides[currentSlide].persona"
               alt="Persona"
               style="filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.5))"
-              class="relative z-20 select-none lg:drop-shadow-lg w-[300px] sm:w-[50px] md:w-[300px] lg:w-[380px] xl:w-[600px]"
+              class="relative z-20 select-none
+                     w-[300px] sm:w-[50px] md:w-[300px] lg:w-[380px] xl:w-[600px]
+                     lg:drop-shadow-lg"
             />
             <img
               :src="slides[currentSlide].dispositivo"
               alt="Dispositivo"
-              class="absolute right-[-50px] bottom-[50px] w-[160px] sm:right-[10px] sm:bottom-[70px] sm:w-[190px] md:left-[150px] md:bottom-[90px] md:w-[220px] lg:left-[180px] lg:right-auto lg:bottom-[10px] lg:w-[260px] xl:left-[350px] xl:bottom-[150px] xl:w-[500px] drop-shadow-5xl z-30"
+              class="absolute z-30
+                     right-[-50px] bottom-[50px] w-[160px]
+                     sm:right-[10px] sm:bottom-[70px] sm:w-[190px]
+                     md:left-[150px] md:bottom-[90px] md:w-[220px]
+                     lg:left-[180px] lg:right-auto lg:bottom-[10px] lg:w-[260px]
+                     xl:left-[350px] xl:bottom-[150px] xl:w-[500px]
+                     drop-shadow-5xl"
             />
           </div>
         </transition>
       </div>
 
-      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center h-auto lg:h-full z-20 max-w-2xl px-4 lg:px-16 py-8 order-2 lg:order-1">
-        <div class="overflow-hidden w-full mb-6">
+      <div
+        class="z-20
+               w-full lg:w-1/2 max-w-2xl
+               h-auto lg:h-full
+               flex flex-col items-center lg:items-start justify-center
+               order-2 lg:order-1
+               px-4 lg:px-16 py-8">
+      <div class="w-full mb-[45px] overflow-hidden">
           <transition name="slide-fade" mode="out-in">
             <h2
               :key="currentSlide"
-              class="text-white font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug font-nunito text-center lg:text-left">
+              class="font-nunito font-light
+                     text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+                     leading-snug
+                     text-white text-center lg:text-left">
               {{ slides[currentSlide].title }}
               {{ slides[currentSlide].subtitle }}
               <span class="font-extrabold">
@@ -48,27 +82,48 @@
           </transition>
         </div>
 
-        <div class="flex flex-col w-full gap-3 mb-7 lg:flex-row lg:w-auto">
-          <button class="bg-[#47f5c9] hover:bg-[#34ddb1] text-[#1A2B90] font-bold w-full lg:w-auto py-3 px-6 rounded-full shadow transition text-base">
+        <div class="w-full lg:w-auto mb-7
+                    flex flex-col lg:flex-row gap-3">
+          <button
+            class="w-full h-[56px] lg:w-auto 
+                   py-3 px-6
+                   bg-[#32FADD] 
+                   text-[#1A2B90] text-base font-bold
+                   rounded-full shadow
+                   transition">
             QUIERO CONTRATAR
           </button>
-          <button class="border border-white text-white font-bold w-full lg:w-auto py-3 px-6 rounded-full shadow transition text-base hover:bg-white hover:text-[#3939D0]">
+          <button
+            class="w-full lg:w-auto
+                   py-3 px-6
+                   bg-transparent hover:bg-white
+                   text-white hover:text-[#3939D0] text-base font-bold
+                   border border-white
+                   rounded-full shadow
+                   transition">
             NUESTRAS TARIFAS
           </button>
         </div>
 
-        <div class="flex gap-4 items-center text-white text-xs sm:text-sm justify-center lg:justify-start w-full">
+        <div
+          class="w-full h-[56px]
+                 mt-[50px]
+                 flex gap-4 items-center
+                 justify-center lg:justify-start
+                 text-white text-xs sm:text-sm">
           <button
             @click="prevSlide"
-            class="bg-[#272962] w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#3a3b7a] transition"
-            aria-label="Anterior"
-          >
+            class="w-[56px] h-[56px]
+                   bg-[#272962] hover:bg-[#3a3b7a]
+                   flex items-center justify-center
+                   rounded-full
+                   transition"
+            aria-label="Anterior">
             <svg
               class="w-5 h-5"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+              viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -80,7 +135,11 @@
 
           <button
             @click="nextSlide"
-            class="bg-[#272962] w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#3a3b7a] transition"
+            class="w-[56px] h-[56px]
+                   bg-[#272962] hover:bg-[#3a3b7a]
+                   flex items-center justify-center
+                   rounded-full
+                   transition"
             aria-label="Siguiente">
             <svg
               class="w-5 h-5"
@@ -98,7 +157,10 @@
 
           <button
             @click="toggleAutoplay"
-            class="bg-[#272962] w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#3a3b7a] transition ml-2"
+            class="w-[56px] h-[56px] 
+                   flex items-center justify-center
+                   rounded-full
+                   transition"
             :aria-label="isPlaying ? 'Pausar' : 'Reproducir'">
             <svg
               v-if="isPlaying"

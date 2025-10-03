@@ -1,13 +1,19 @@
 <template>
-  <div class="w-full bg-[#1A1E89] opacity-90 flex items-center justify-center px-8 py-3 text-white text-lg">
+  <div
+    class="w-full h-[64px]
+           flex items-center justify-center
+           bg-[#1A1E89]
+           px-8 py-3
+           text-white text-lg
+           opacity-90">
     <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      class="h-6 w-6 text-[#47f5c9] mr-5" 
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 mr-5
+             text-[#47f5c9]"
       fill="none" 
       viewBox="0 0 24 24" 
       stroke="currentColor"
-      stroke-width="2"
-    >
+      stroke-width="2">
       <path 
         stroke-linecap="round" 
         stroke-linejoin="round" 
