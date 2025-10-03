@@ -1,11 +1,7 @@
 <template>
   <section
-    class="relative w-full mx-auto overflow-hidden
-           h-auto lg:h-[650px]
-           bg-gradient-to-br from-[#3939D0] via-[#3E3CF0] to-[#4A4AE8]
-           rounded-b-3xl shadow-xl">
+    class="relative w-full mx-auto overflow-hidden h-auto lg:h-[650px] bg-gradient-to-br from-[#3939D0] via-[#3E3CF0] to-[#4A4AE8] rounded-b-3xl shadow-xl">
     
-    <!-- Background Shape - Desktop -->
     <div class="hidden lg:block absolute top-[-78px] right-0 w-full h-full pointer-events-none overflow-hidden">
       <img 
         src="../assets/img/backgroundShape.png"
@@ -14,7 +10,6 @@
       />
     </div>
 
-    <!-- Background Shape - Tablet -->
     <div class="hidden md:block lg:hidden absolute top-0 right-0 w-[501px] h-[464px] pointer-events-none overflow-hidden">
       <img 
         src="../assets/img/backgroundShapeTb.png"
@@ -23,7 +18,6 @@
       />
     </div>
 
-    <!-- Background Shape - Mobile -->
     <div class="block md:hidden absolute top-0 right-0 w-[319px] h-[295px] pointer-events-none overflow-hidden">
       <img 
         src="../assets/img/backgroundshapeMb.png"
@@ -32,21 +26,20 @@
       />
     </div>
 
-    <!-- Desktop Layout -->
     <div class="hidden lg:flex relative z-10 flex-col lg:flex-row items-center justify-center px-4 pt-0">
-      <div class="relative w-full lg:w-1/2 min-h-[514px] lg:min-h-[474px] ml-[178px] flex justify-center lg:justify-start items-end order-1 lg:order-2 pt-8 lg:pt-0 lg:pl-0">
+      <div class="relative w-full lg:w-1/2 min-h-[514px] lg:min-h-[474px] ml-[178px] flex justify-center lg:justify-start items-end order-1 lg:order-2 pt-8 lg:pt-0">
         <transition name="image-fade" mode="out-in">
           <div :key="currentSlide" class="relative flex items-end justify-center">
             <img
               :src="slides[currentSlide].personaDesktop"
               alt="Persona"
               style="filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.5))"
-              class="relative z-20 select-none w-[300px] sm:w-[50px] md:w-[300px] lg:w-[380px] xl:w-[474px] lg:drop-shadow-lg"
+              class="relative z-20 select-none w-[300px] sm:w-[350px] md:w-[300px] lg:w-[380px] xl:w-[474px] lg:drop-shadow-lg"
             />
             <img
               :src="slides[currentSlide].dispositivoDesktop"
               alt="Dispositivo"
-              class="absolute z-30 right-[-50px] bottom-[50px] w-[160px] sm:right-[10px] sm:bottom-[70px] sm:w-[190px] md:left-[150px] md:bottom-[90px] md:w-[220px] lg:left-[180px] lg:right-auto lg:bottom-[10px] lg:w-[260px] xl:left-[250px] xl:bottom-[164px] xl:w-[516px] xl:h-[508px] drop-shadow-5xl"
+              class="absolute z-30 right-[-50px] bottom-[50px] w-[160px] sm:right-[10px] sm:bottom-[70px] sm:w-[190px] md:left-[150px] md:bottom-[90px] md:w-[220px] lg:left-[180px] lg:bottom-[10px] lg:w-[260px] xl:left-[250px] xl:bottom-[164px] xl:w-[516px] xl:h-[508px] drop-shadow-2xl"
             />
           </div>
         </transition>
@@ -63,11 +56,11 @@
           </transition>
         </div>
 
-        <div class="w-[470px] mb-7 flex flex-col lg:flex-row w-full h-[56px] mt-[20px] ml-[155px] gap-3">
-          <button class="w-[198px] h-[56px] lg:w-auto py-3 px-6 bg-[#32FADD] text-[#1A2B90] text-base font-bold rounded-full shadow transition">
+        <div class="w-[470px] mb-7 flex flex-col lg:flex-row h-[56px] mt-[20px] ml-[155px] gap-3">
+          <button class="w-[198px] h-[56px] lg:w-auto py-3 px-6 bg-[#32FADD] text-[#1A2B90] text-base font-bold rounded-full shadow transition hover:bg-[#2de8ca]">
             QUIERO CONTRATAR
           </button>
-          <button class="w-[198px] lg:w-auto py-3 px-6 bg-transparent hover:bg-white text-white hover:text-[#3939D0] text-base font-bold border border-white rounded-full shadow transition">
+          <button class="w-[198px] h-[56px] lg:w-auto py-3 px-6 bg-transparent hover:bg-white text-white hover:text-[#3939D0] text-base font-bold border border-white rounded-full shadow transition">
             NUESTRAS TARIFAS
           </button>
         </div>
@@ -89,7 +82,6 @@
       </div>
     </div>
 
-    <!-- Mobile Layout -->
     <div class="lg:hidden md:hidden relative z-10 px-6 py-8">
       <transition name="slide-fade" mode="out-in">
         <div :key="currentSlide" class="w-full flex flex-col">
@@ -118,7 +110,7 @@
           </div>
 
           <div class="w-full flex flex-col gap-3 mb-6">
-            <button class="w-full h-[56px] py-3 px-6 bg-[#32FADD] text-[#1A2B90] text-base font-bold rounded-full shadow transition">
+            <button class="w-full h-[56px] py-3 px-6 bg-[#32FADD] text-[#1A2B90] text-base font-bold rounded-full shadow transition hover:bg-[#2de8ca]">
               QUIERO CONTRATAR
             </button>
             <button class="w-full h-[56px] py-3 px-6 bg-transparent hover:bg-white text-white hover:text-[#3939D0] text-base font-bold border border-white rounded-full shadow transition">
@@ -144,13 +136,10 @@
       </transition>
     </div>
 
-    <!-- Tablet Layout -->
     <div class="hidden md:flex lg:hidden relative z-10 px-8 py-10">
       <transition name="slide-fade" mode="out-in">
         <div :key="currentSlide" class="w-full flex flex-col">
-          <!-- Layout horizontal: texto/botones a la izquierda, imagen a la derecha -->
           <div class="flex flex-row items-center justify-between gap-12 mb-8">
-            <!-- Columna izquierda: Texto y botones -->
             <div class="flex flex-col flex-1 max-w-[350px]">
               <h2 class="font-nunito font-light text-[28px] leading-tight text-white text-left mb-6">
                 {{ slides[currentSlide].title }}<br>
@@ -159,7 +148,7 @@
               </h2>
               
               <div class="flex flex-col gap-3">
-                <button class="w-full h-[50px] py-3 px-5 bg-[#32FADD] text-[#1A2B90] text-sm font-bold rounded-full shadow transition">
+                <button class="w-full h-[50px] py-3 px-5 bg-[#32FADD] text-[#1A2B90] text-sm font-bold rounded-full shadow transition hover:bg-[#2de8ca]">
                   QUIERO CONTRATAR
                 </button>
                 <button class="w-full h-[50px] py-3 px-5 bg-transparent hover:bg-white text-white hover:text-[#3939D0] text-sm font-bold border border-white rounded-full shadow transition">
@@ -168,7 +157,6 @@
               </div>
             </div>
 
-            <!-- Columna derecha: Imagen -->
             <div class="flex-shrink-0">
               <img
                 :src="slides[currentSlide].tabletImage"
@@ -179,7 +167,6 @@
             </div>
           </div>
 
-          <!-- Controles de navegación centrados -->
           <div class="w-full flex gap-4 items-center justify-center">
             <button @click="prevSlide" class="w-[50px] h-[50px] bg-[#272962] hover:bg-[#3a3b7a] flex items-center justify-center rounded-full transition" aria-label="Anterior">
               <img src="../assets/img/left.png" alt="Anterior" class="w-[50px] h-[50px]" />
